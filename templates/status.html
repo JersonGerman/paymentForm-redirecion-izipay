@@ -1,0 +1,30 @@
+{% extends "layout.html" %} 
+
+{% block title %}Resultado{% endblock %} 
+
+{% block content %}
+
+<nav class="col d-flex justify-content-center">
+    <a href="/">
+        <img
+        src="https://iziweb001b.s3.amazonaws.com/webresources/img/logo.png"
+        width="300"
+        alt=""
+    /></a>
+</nav>
+
+<div class="col mx-auto d-flex flex-wrap  me-5 card p-5">
+    <h4 class="mb-1  text-center">Estado de la transacción: <b>{{ data.get('vads_trans_status') }}</b></h4>
+    <hr class="w-100 mb-3 " />
+    <p>N° de pedido: <b>{{ data.get('order')}}</b> </p>
+    <p>Email: <b>{{ data.get('vads_cust_email')}}</b></p>
+    <p>Nombres: <b>{{ data.get('vads_cust_first_name')}}</b></p>
+    <p>Apellidos: <b>{{ data.get('vads_cust_last_name')}}</b></p>
+    <p>Monto: <b>S/{{ amount }}</b></p>
+    <p class="alert alert-danger">Modo: <b>{{ data.get('vads_ctx_mode')}}</b></p>
+
+
+</div>
+
+
+{% endblock %}

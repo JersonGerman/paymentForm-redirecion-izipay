@@ -1,0 +1,32 @@
+{% extends "layout.html" %} 
+
+{% block title %}Confirmar{% endblock %} 
+
+{% block content %}
+
+    <nav class="col d-flex justify-content-center">
+        <a href="/">
+            <img
+            src="https://iziweb001b.s3.amazonaws.com/webresources/img/logo.png"
+            width="300"
+            alt=""
+        /></a>
+    </nav>
+  
+    <div class="col mx-auto d-flex flex-wrap align-items-center me-5 card p-4">
+        <h3 class="mb-1  text-center">Confirmar Datos</h3>
+        <hr class="w-100 mb-3 " />
+        <form class="d-flex flex-wrap justify-content-between" action="{{ URL }}" method="POST">
+            {% for item in data %}
+            <div class="mb-3 d-flex flex-wrap" style="width: 32%;">
+                <label for="{{item}}" class="form-label w-100">{{item}}</label>
+                <input type="text" class="form-control w-100" id="{{item}}" name="{{item}}" value="{{data[item]}}" required />
+            </div>
+            {% endfor %}
+            <input class="btn btn-lg btn-izi w-100 text-white mt-2 " type="submit" value="Validar" />
+        </form>
+
+    </div>
+
+
+{% endblock %}

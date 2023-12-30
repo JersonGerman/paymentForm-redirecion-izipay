@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}Inicio{% endblock %} 
+
+{% block content %}
+
+<style>
+  .nav-bar {
+    position: absolute;
+    top: 10%;
+  }
+</style>
+
+<nav class="nav-bar">
+  <a href="/">
+    <img
+      src="https://iziweb001b.s3.amazonaws.com/webresources/img/logo.png"
+      width="150"
+      alt=""
+  /></a>
+</nav>
+
+<div class="card p-4">
+  <h4 class="mb-1">Formulario en redirección</h4>
+  <hr class="w-100 mb-4">
+  <form action="/confirm" method="POST">
+
+    <div class="mb-3">
+      <label for="email" class="form-label ">Email:</label>
+      <input type="Email" class="form-control" id="email" name="email" required />
+    </div>
+    <div class="mb-3">
+      <label for="firstname" class="form-label ">Nombres:</label>
+      <input type="text" class="form-control" id="firstname" name="firstname" required />
+    </div>
+    <div class="mb-3">
+      <label for="firstname" class="form-label ">Apellidos:</label>
+      <input type="text" class="form-control" id="lastname" name="lastname" required />
+    </div>
+    <div class="mb-3">
+      <label for="order" class="form-label ">N° Orden:</label>
+      <input type="text" class="form-control" id="order" value="{{data.order}}" name="order" required />
+    </div>
+    <div class="mb-3">
+      <label for="amount" class="form-label ">Monto:</label>
+      <input type="number" class="form-control" id="amount" name="amount" required />
+    </div>
+
+    <input  class="btn btn-izi w-50 mx-auto text-white mt-2" type="submit" value="Pagar" />
+
+  </form>
+
+</div>
+{% endblock %}
